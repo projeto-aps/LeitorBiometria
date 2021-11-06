@@ -42,9 +42,8 @@ public class RecognizeFace extends javax.swing.JDialog {
     RectVector detectedFaces = new RectVector();
 
     //Vars
-    String root, firstNamePerson, lastNamePerson, officePerson, dobPerson, telefone;
+    String firstNamePerson;
     //Social Info
-    String facebook, insta, linkedin, git;
     int idPerson;
 
     //Utils
@@ -194,16 +193,12 @@ public class RecognizeFace extends javax.swing.JDialog {
                                 if (prediction == -1) {
                                     rectangle(cameraImage, dadosFace, new Scalar(0, 0, 255, 3), 3, 0, 0);
                                     idPerson = 0;
-                                    facebook = "";
-                                    insta = "";
-                                    git = "";
-                                    linkedin = "";
                                 } else {
                                     rectangle(cameraImage, dadosFace, new Scalar(0, 255, 0, 3), 3, 0, 0);
                                     System.out.println(confidence.get(0));
                                     idPerson = prediction;
 //                                    System.out.println("PESSOA RECONHECIDA COMO: " + idPerson);
-                                    rec();
+//                                    rec();
                                 }
                             }
 
@@ -227,18 +222,18 @@ public class RecognizeFace extends javax.swing.JDialog {
         }
     }
 
-    private void rec() {
-        //Retrieve data from database
-        new Thread() {
-            @Override
-            public void run() {
-                try {
-                    
-                } catch (Exception e) {
-                }
-            }
-        }.start();
-    }
+//    private void rec() {
+//        //Retrieve data from database
+//        new Thread() {
+//            @Override
+//            public void run() {
+//                try {
+//                    
+//                } catch (Exception e) {
+//                }
+//            }
+//        }.start();
+//    }
 
     public void stopCamera() {
         try {
